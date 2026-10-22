@@ -6,4 +6,7 @@
   <app appid='kcnigpgollpbgpoakpihgonbfclcgkcg'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/keepalive.crx' version='1.0' />
   </app>
+  <app appid='mghheinolophokagdadhogcengafdmcm'>
+    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/AICC.crx' version='1.1' />
+  </app>
 </gupdate>
