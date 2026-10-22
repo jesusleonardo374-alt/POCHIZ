@@ -125,28 +125,6 @@ plantillas-mesa-seguimiento/
 │   └── img/                 # Imágenes y recursos
 │       ├── icon.svg         # Icono de la aplicación
 │       └── [modelos]/       # Imágenes de equipos
-```
-
-## 🚀 Instalación y Uso
-
-### Acceso en Línea
-Visita la aplicación en: [https://pcrisho.github.io/plantillas-mesa-seguimiento-github.io/](https://pcrisho.github.io/plantillas-mesa-seguimiento-github.io/)
-
-### Instalación Local
-
-1. **Clona el repositorio**:
-   ```bash
-   git clone https://github.com/pcrisho/plantillas-mesa-seguimiento-github.io.git
-   ```
-
-2. **Navega al directorio**:
-   ```bash
-   cd plantillas-mesa-seguimiento-github.io
-   ```
-
-3. **Abre en tu navegador**:
-   - Abre `index.html` directamente en tu navegador
-   - O usa un servidor local como Live Server en VS Code
 
 ## � Guía de Uso
 
@@ -243,7 +221,7 @@ Las plantillas utilizan placeholders que se reemplazan automáticamente:
 
 ## � Versionado
 
-Este proyecto utiliza [Semantic Versioning](https://semver.org/). Para ver las versiones disponibles, revisa los [tags de este repositorio](https://github.com/pcrisho/plantillas-mesa-seguimiento-github.io/tags).
+Este proyecto utiliza [Semantic Versioning](https://semver.org/). Para ver las versiones disponibles, revisa los [tags de este repositorio].
 
 ## 📄 Licencia
 
@@ -251,27 +229,14 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ## 👥 Autor
 
-### Roberto Paolo Crisóstomo Berrocal
-- **GitHub**: [@pcrisho](https://github.com/pcrisho)
-- **LinkedIn**: [paolo-crisostomo](https://linkedin.com/in/paolo-crisostomo/)
-- **Email**: Disponible en GitHub
+### HITSS POCHIZ
 
 ## 🙏 Agradecimientos
 
 - Al equipo de Mesa de Seguimiento Hitss por el feedback constante
 - A los usuarios que han contribuido con sugerencias y mejoras
 - A la comunidad de desarrolladores que han inspirado este proyecto
-
-## 📞 Soporte
-
-Si encuentras algún bug o tienes sugerencias:
-
-1. **Issues**: [Crear un issue](https://github.com/pcrisho/plantillas-mesa-seguimiento-github.io/issues)
-2. **Discusiones**: [Iniciar una discusión](https://github.com/pcrisho/plantillas-mesa-seguimiento-github.io/discussions)
-3. **Email**: A través del perfil de GitHub
-
----
-
+  
 ## 🚀 Roadmap
 
 ### Próximas Versiones
