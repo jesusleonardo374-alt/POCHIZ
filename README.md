@@ -259,4 +259,4 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 **⭐ Si este proyecto te ha sido útil, ¡no olvides darle una estrella!**
 
-*Última actualización: Agosto 2025 - Versión 2.1.0*
+*Última actualización: OCTUBRE 22 - 2026 - Versión 5.1.0*
