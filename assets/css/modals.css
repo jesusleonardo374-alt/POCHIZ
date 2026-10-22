@@ -1,0 +1,920 @@
+*,
+::after,
+::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Tipografía y colores */
+:root {
+  --color-primary: #0F62FE;
+  /* Azul */
+  --color-text: #21272A;
+  /* Gris oscuro */
+  --color-text-h2: #001D6C;
+
+  /* 2do fondo */
+  --background-color-2: #F2F4F8;
+  /* Fondo rojo */
+  --color-red: #e12e20;
+
+  --header-height: 70px;
+
+  --color-primary: #0F62FE;
+  --color-text: #21272A;
+  --color-attended: #4CAF50;
+  /* Verde */
+  --color-in-attention: #FFC107;
+  /* Amarillo */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* Evita el scroll del body */
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+}
+
+body {
+  /*APP*/
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  scroll-behavior: smooth;
+
+
+}
+
+/* Estilo general del modal */
+#modal {
+  padding: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Evita borde al enfocar */
+#modal:focus {
+  outline: none;
+}
+
+/* Fondo difuminado cuando el modal está abierto */
+#modal::backdrop {
+  background-color: rgba(38, 38, 38, 0.637);
+  /**/
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* 👇 Estado inicial al abrir */
+dialog[open] {
+  animation: dialogFadeIn 0.3s ease forwards;
+}
+
+/* 👇 Estado al cerrar */
+dialog.closing {
+  animation: dialogFadeOut 0.3s ease forwards;
+}
+
+/* Entrada */
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.98);
+
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+}
+
+/* Salida */
+@keyframes dialogFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -48%) scale(0.98);
+
+  }
+}
+
+/* Backdrop con animación también */
+dialog::backdrop {
+  animation: backdropFadeIn 0.3s ease forwards;
+  background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+dialog.closing::backdrop {
+  animation: backdropFadeOut 0.3s ease forwards;
+}
+
+@keyframes backdropFadeIn {
+  from {
+    opacity: 0;
+
+  }
+
+  to {
+    opacity: 1;
+
+  }
+}
+
+@keyframes backdropFadeOut {
+  from {
+    opacity: 1;
+
+  }
+
+  to {
+    opacity: 0;
+
+  }
+}
+
+
+/**/
+/**/
+/**/
+
+#confirmar-cierre-sesion {
+  padding: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#confirmar-cierre-sesion::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+}
+
+.confirm-dialog-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.confirm-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.cancel-btn {
+  background-color: #ccc;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  flex: 1;
+}
+
+/**/
+/**/
+/**/
+
+.copiado-dialog {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: var(--color-text);
+  background-color: #21272a25;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: none;
+  font-size: 0.9rem;
+  animation: fadeOut 2s ease forwards;
+  pointer-events: none;
+  /* Evita que bloquee clicks */
+  z-index: 999;
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+}
+
+.copiado-dialog:focus {
+  outline: none;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* ANIMACIONES */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutSlide {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+/* APLICACIÓN GENERAL */
+.fade-in {
+  animation: fadeInSlide 0.4s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOutSlide 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.dialog-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  color: var(--color-text);
+  background-color: #21272a25;
+  font-size: 0.9rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+}
+
+.dialog-toast.show {
+  animation: fadeInUp 0.3s ease forwards;
+  border: none;
+  outline: none;
+
+}
+
+.dialog-toast.hide {
+  animation: fadeOutDown 0.3s ease forwards;
+  border: none;
+  outline: none;
+}
+
+
+/* Botón flotante */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #0F62FE;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos del panel lateral derecho */
+.todo-dialog {
+  /* Anula estilos del dialog general */
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  margin: auto 0px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 0;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+
+  display: flex;
+  flex-direction: column;
+
+  /* Animación de entrada y salida */
+  transform: translateX(100%);
+  transition: transform 0.5s ease;
+
+  /* Se anulan las animaciones por defecto del dialog[open] */
+  animation: none !important;
+  height: 95vh;
+
+}
+
+.todo-dialog[open] {
+  transform: translateX(0);
+}
+
+.todo-dialog::backdrop {
+  background-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.todo-dialog.closing {
+  transform: translateX(100%);
+}
+
+.todo-header {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.7);
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+
+
+}
+
+.todo-header h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.todo-content { 
+  /* Este es el contenedor que debe tener scroll */
+  flex-grow: 1;
+  /* Ocupa todo el espacio restante */
+  overflow-y: auto;
+  /* Permite el scroll vertical */
+  padding: 16px;
+}
+
+
+.todo-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.todo-content::-webkit-scrollbar-thumb {
+  background-color: rgb(215, 215, 215);
+  /* un blanco tenue */
+  border-radius: 4px;
+}
+
+.todo-input-container {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+#new-task-input {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  padding: 0.75rem;
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+#new-task-input:focus {
+
+  animation: inputGradeAnim 1s ease;
+  border-bottom: solid 1px var(--color-primary);
+}
+
+@keyframes inputGradeAnim {
+  0% {
+    box-shadow: 0 0 0 0 rgba(15, 98, 254, 0.5);
+    background-color: #e3f0ff;
+    border-bottom: solid 1px #0f63fe00;
+  }
+
+  60% {
+    box-shadow: 0 0 0 8px rgba(15, 98, 254, 0.15);
+    background-color: #f2f8ff;
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(15, 98, 254, 0);
+    background-color: #fff;
+    border-bottom: solid 1px var(--color-primary);
+  }
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item input[type="checkbox"] {
+  margin-left: 16px;
+  min-width: 1.25rem;
+  min-height: 1.25rem;
+  cursor: pointer;
+}
+
+.task-item .task-text {
+  flex-grow: 1;
+  font-size: 1rem;
+  transition: text-decoration 0.3s;
+}
+
+.task-text-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.task-title {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.task-description {
+  font-family: 'consolas', 'Courier New', monospace;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+  white-space: pre-wrap;
+  line-height: 1.4;
+  min-height: 100px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.task-title:focus,
+.task-description:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #ff4c4c;
+}
+
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-task-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-red);
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.delete-task-btn:hover {
+  opacity: 1;
+}
+
+.empty-state-message {
+  text-align: center;
+  color: #888;
+  margin-top: 2rem;
+}
+
+.todo-footer {
+  /* IMPORTANTE: position: sticky funciona correctamente aquí */
+  /* con la configuración flexbox en el contenedor padre */
+  position: sticky;
+  bottom: 0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0 0 12px 12px;
+}
+
+.task-filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background-color: #E0E0E0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+
+.filter-btn:hover {
+  background-color: #d0d0d0;
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.filter-btn.active#filter-pending {
+  background-color: var(--color-in-attention);
+  color: #fff;
+}
+
+.filter-btn.active#filter-completed {
+  background-color: var(--color-attended);
+  color: #fff;
+}
+
+
+.clear-all-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-red);
+  font-size: 0.875rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.task-item.in-attention {
+  border-left: 5px solid #ffcc00;
+  /* Amarillo */
+  background-color: #fff8e1;
+  animation: slideInRight 0.5s ease forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0.7;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.task-item.attended {
+  border-left: 5px solid #4caf50;
+  /* Verde */
+  background-color: #e8f5e9;
+  animation: slideInLeft 0.5s ease forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0.7;
+    transform: translateX(0px);
+    overflow-x: hidden;
+    scrollbar-color: none;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.task-title {
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: none;
+  padding: 0.25rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.task-description {
+  border: 1px solid #ccc;
+  width: 100%;
+  outline: none;
+  padding: 0.25rem;
+  border-radius: 4px;
+}
+
+
+
+.task-title:focus,
+.task-description:focus {
+  border: solid 1px var(--color-primary);
+}
+
+.download-btn {
+  font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+  background-color: rgb(214, 214, 214);
+  color: var(--color-text);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(191, 191, 191, 0.15);
+  transition: 
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0, 0, 0, 0);
+  outline: none;
+}
+
+.download-btn:hover {
+  background-color: #c9c9c9;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.25);
+  transform: translateY(0px);
+}
+
+.download-btn:focus {
+  background-color: #e0eaff;
+  box-shadow: 0 6px 20px rgba(15, 99, 254, 0.15);
+  outline: none;
+  transform: scale(0.9);
+}
+
+.download-btn:active {
+  background-color: #bdbdbd;
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.18);
+  transform: translateY(0) scale(0.98);
+}
+
+.download-btn .material-symbols-outlined {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-right: 0;
+}
+
+.download-btn:hover {
+  background-color: #c9c9c9;
+}
+
+
+.close-notes-btn {
+  background: none;
+  /* Elimina el fondo */
+  border: none;
+  /* Elimina el borde */
+  cursor: pointer;
+  padding: 0.5rem;
+  /* Ajusta el padding si es necesario para el tamaño del clic */
+  border-radius: 50%;
+  /* Opcional: para que tenga forma circular al hacer hover */
+  transition: background-color 0.2s ease-in-out;
+  /* Transición suave al hacer hover */
+}
+
+.close-notes-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  /* Un ligero fondo al hacer hover */
+
+}
+
+.close-notes-btn .material-symbols-outlined {
+  font-size: 1.5rem;
+  /* Ajusta el tamaño del icono */
+  color: var(--color-text);
+  /* Color del icono, puedes usar una variable o un color fijo */
+}
+
+/*
+ * Estos estilos son para el nuevo selector de fechas en el `todo-dialog`.
+ */
+
+/* --- Estilos para el contenedor del filtro de fecha --- */
+.date-filter-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* --- Selector de fecha nativo estilizado --- */
+#date-filter-container {
+  position: relative;
+  display: inline-block;
+}
+
+#date-input {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 0px solid transparent;
+  font-family: 'montserrat', Helvetica, Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 140px;
+  height: 34px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  outline: none;
+  
+}
+
+#date-input:hover {
+  background: #004ddc;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.7);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+#date-input:focus {
+  background: #0F62FE;
+  ;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(15, 99, 254, 0.);
+}
+
+#date-input:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* Estilizar el icono del calendario */
+#date-input::-webkit-calendar-picker-indicator {
+  width: 0.875rem;
+  height: 0.875rem;
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+#date-input::-webkit-calendar-picker-indicator:hover {
+  transform: scale(1.2);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Para Firefox */
+#date-input::-moz-calendar-picker-indicator {
+  width: 0.875rem;
+  height: 0.875rem;
+  transform: scale(1.1);
+  cursor: pointer;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+
+}
+
+#date-input::-moz-calendar-picker-indicator:hover {
+  transform: scale(1.2);
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 0, 0, 0.6));
+  animation: pulse 1.5s infinite;
+}
+
+/* Estilizar el texto del placeholder en navegadores que lo soporten */
+#date-input::-webkit-datetime-edit-text {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#date-input::-webkit-datetime-edit-month-field,
+#date-input::-webkit-datetime-edit-day-field,
+#date-input::-webkit-datetime-edit-year-field {
+  color: #fff;
+  background: transparent;
+}
+
+#date-input::-webkit-datetime-edit-month-field:focus,
+#date-input::-webkit-datetime-edit-day-field:focus,
+#date-input::-webkit-datetime-edit-year-field:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  outline: none;
+}
