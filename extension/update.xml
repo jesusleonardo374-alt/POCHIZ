@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
   <app appid='ffkppahppjkmpienkpbfnkpkngcdkdko'>
-    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/TOA-v2.2.crx' version='2.2' />
+    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/TOA V4.crx' version='4' />
   </app>
   <app appid='kcnigpgollpbgpoakpihgonbfclcgkcg'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/keepalive.crx' version='1.0' />
   </app>
   <app appid='mghheinolophokagdadhogcengafdmcm'>
-    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/AICC.crx' version='1.1' />
+    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/EXTENCION AICC 1.2V.crx' version='1.2' />
   </app>
 </gupdate>
