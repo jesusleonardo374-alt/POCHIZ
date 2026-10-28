@@ -9,4 +9,8 @@
   <app appid='nhkmoegmfijobagkecflmcppmoolodhp'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/EXTENCION_AICC_1_2V.crx' version='1.2' />
   </app>
+  <!-- NUEVA: Extension Laraigo v5 (Reemplaza el appid con el ID real de tu extensión .crx) -->
+  <app appid='AQUÍ_VA_EL_ID_DE_LARAIGO_V5'>
+    <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/EXTENCION_LARAIGO_v5.crx' version='5.0' />
+  </app>
 </gupdate>
