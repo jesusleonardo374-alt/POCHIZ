@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <gupdate xmlns='http://www.google.com/update2/response' protocol='2.0'>
-  <app appid='igefbfcnpochbhhjjnddifphdfjipood'>
+  <app appid='hnakijikjfkhjgoeefmdbpklgdljdjbm'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/TOA_V4_1.crx' version='4.1' />
   </app>
   <app appid='kcnigpgollpbgpoakpihgonbfclcgkcg'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/keepalive.crx' version='1.0' />
   </app>
-  <app appid='nhkmoegmfijobagkecflmcppmoolodhp'>
+  <app appid='fnlpfaahjmngdjfobpkkplkgealopmnj'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/EXTENCION_AICC_1_2V.crx' version='1.2' />
   </app>
-  <app appid='fcpnkechijfdipkdoopkjekdofepdmcl'>
+  <app appid='ldipbolfgbjkgapnocgmhalgdjlmimgl'>
     <updatecheck codebase='https://jesusleonardo374-alt.github.io/POCHIZ/extension/EXTENCION_LARAIGO_v5.crx' version='5.0' />
   </app>
 </gupdate>
